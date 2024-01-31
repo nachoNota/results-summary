@@ -1,0 +1,175 @@
+@font-face {
+    font-family: 'hankengrotesk';
+    font-display: swap;
+    font-weight: 100 900;
+    src: url('assets/fonts/HankenGrotesk-VariableFont_wght.ttf') format('truetype');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+:root{
+    --Lightred: hsl(0, 100%, 67%);
+    --Orangeyyellow: hsl(39, 100%, 56%);
+    --Greenteal: hsl(166, 100%, 37%);
+    --Cobaltblue: hsl(234, 85%, 45%);
+    --Lightslateblue: hsl(252, 100%, 67%); /*background*/
+    --Lightroyalblue: hsl(241, 81%, 54%); /*background*/
+    --Violetblue: hsla(256, 72%, 46%, 1); /*circle*/
+    --Persianblue: hsla(241, 72%, 46%, 0); /*circle*/
+    --White: hsl(0, 0%, 100%); 
+    --Paleblue: hsl(221, 100%, 96%);
+    --Lightlavender: hsl(241, 100%, 89%);
+    --Darkgrayblue: 224, 30%, 27%;
+}
+
+body{
+    color: var(--Lightlavender);
+    font-size: 1rem;
+    font-family: hankengrotesk;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container{
+    max-width: 36rem;
+    border-radius: 2rem;
+    display: grid;
+    box-shadow: .5rem 1rem 3rem hsl(var(--Darkgrayblue), .2);
+}
+
+@media (min-width:600px) {
+    .container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.result{
+    background: linear-gradient(var(--Lightslateblue), var(--Lightroyalblue));
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1.7rem;
+    border-radius: 2rem;
+    padding: 2rem;
+    padding-bottom: 2.3rem;
+}
+
+@media (max-width:600px) {
+    .result{
+        border-radius: 0 0 2rem 2rem;
+    }
+}
+
+.result h1, .summary h2{
+    font-size: 1.265rem;
+}
+
+.result .circle{
+    align-self: center;
+    background: linear-gradient(var(--Violetblue), var(--Persianblue));
+    border-radius:100%;
+    padding-inline: 3rem;
+    padding-block: 2rem;
+
+}
+
+.result .circle span{ 
+    color: var(--White);
+    display: block;
+    font-size: 3.8rem;
+    font-weight: 800;
+}
+
+.result .result-text p:nth-child(1){
+    font-size: 1.5rem;
+    color: var(--White);
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+}
+
+.summary{
+    padding: 2rem;
+    display: grid;
+    gap: 1rem;
+    border-radius: 0 2rem 2rem 0;    
+    font-weight: 700;
+}
+
+.summary h2, .summary span{
+    color: hsl(var(--Darkgrayblue));
+}
+
+.summary .card .left-side h3{
+    font-size: 1rem;
+}
+
+.summary .card .left-side{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.summary .card:not(:last-child){
+    margin-bottom: 1rem;
+}
+
+.summary .cards .card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    max-width: 100%;
+    border-radius: 0.5rem;
+}
+
+.summary .cards .card:nth-child(1){
+    background: hsla(0, 100%, 67%, 0.08);
+    color: var(--Lightred);
+}
+
+.summary .cards .card:nth-child(2){
+    background: hsla(39, 100%, 56%, 0.08);
+    color: var(--Orangeyyellow);
+}
+
+.summary .cards .card:nth-child(3){
+    background: hsla(166, 100%, 37%, 0.08);
+    color: var(--Greenteal);
+}
+
+.summary .cards .card:nth-child(4){
+    background: hsla(234, 85%, 45%, 0.08);
+    color: var(--Cobaltblue);
+}
+
+.summary .cards .card p{
+    color: hsl(260, 7%, 64%);
+}
+
+.button{
+    color: var(--Paleblue);
+    background: hsl(var(--Darkgrayblue));
+    padding-block: 0.5rem;
+    border-radius: 1.5rem;
+    font-family: hankengrotesk;
+    cursor: pointer;
+}
+
+@media (max-width:600px) {
+    .button{
+        padding-block: 0.8rem;
+    }
+}
+
+.button:hover{
+    background: linear-gradient(var(--Lightslateblue), var(--Lightroyalblue));
+}
